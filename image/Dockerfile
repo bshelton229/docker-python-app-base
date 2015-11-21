@@ -2,6 +2,9 @@
 FROM python:2.7.8
 MAINTAINER Bryan Shelton <bryan@sheltonplace.com>
 
+# Add the nodejs repo
+RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
+
 RUN apt-get update && apt-get install -y \
     fontconfig \
     geoip-database \
@@ -15,8 +18,6 @@ RUN apt-get update && apt-get install -y \
     libxft-dev \
     mysql-client \
     nodejs \
-    nodejs-legacy \
-    npm \
     postgresql-client \
     ruby \
     ruby-dev \
@@ -36,3 +37,6 @@ RUN gem install compass -v 1.0.1 --no-rdoc --no-ri
 # Node.js dependencies
 RUN npm -g install uglify-js
 RUN npm -g install phantomjs
+RUN npm -g install jasmine-node
+RUN npm -g install postcss-cli
+RUN npm -g install autoprefixer
