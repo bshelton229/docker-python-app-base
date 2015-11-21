@@ -1,5 +1,5 @@
 # Official Docker python image
-FROM bshelton229/python
+FROM python:2.7.8
 MAINTAINER Bryan Shelton <bryan@sheltonplace.com>
 
 RUN apt-get update && apt-get install -y \
@@ -24,6 +24,10 @@ RUN apt-get update && apt-get install -y \
     swig \
     vim \
     && rm -rf /var/lib/apt/lists/*
+
+# Upgrade virtualenv and setuptools
+RUN pip install virtualenv --upgrade
+RUN pip install setuptools --upgrade
 
 # Scss/sass dependencies
 RUN gem install sass -v 3.4.5 --no-rdoc --no-ri
