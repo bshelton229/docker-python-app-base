@@ -7,4 +7,4 @@ build:
 	docker build -t $(NAME):$(VERSION) --rm --pull=true image
 
 shell:
-	docker run -ti $(NAME):$(VERSION) /bin/bash
+	docker run -ti --rm $(NAME):$(VERSION) /bin/bash
