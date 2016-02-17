@@ -33,10 +33,3 @@ RUN pip install setuptools --upgrade
 # Scss/sass dependencies
 RUN gem install sass -v 3.4.5 --no-rdoc --no-ri
 RUN gem install compass -v 1.0.1 --no-rdoc --no-ri
-
-# Node.js dependencies
-RUN npm -g install uglify-js
-RUN npm -g install phantomjs
-RUN npm -g install jasmine-node
-RUN npm -g install postcss-cli
-RUN npm -g install autoprefixer
